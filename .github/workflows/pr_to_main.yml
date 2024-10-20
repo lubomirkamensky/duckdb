@@ -26,8 +26,6 @@ jobs:
         uses: opt-nc/setup-duckdb-action@main
 
       - uses: actions/setup-python@master
-        with:
-          python-version: "3.13"
 
       - name: Lint with sqlfluff
         run: |
