@@ -76,4 +76,3 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dbt-target
-
