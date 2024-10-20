@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: DuckDB setup
-        uses: opt-nc/setup-duckdb-action@v1.0.9
+        uses: opt-nc/setup-duckdb-action@main
 
       - uses: actions/setup-python@master
         with:
