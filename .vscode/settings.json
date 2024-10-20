@@ -1,0 +1,3 @@
+{
+    "dbt.dbtPythonPathOverride": "~/venv/Scripts/python.exe"
+}
