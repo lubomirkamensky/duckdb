@@ -23,9 +23,9 @@ jobs:
         uses: actions/checkout@master
 
       - name: DuckDB setup
-        uses: opt-nc/setup-duckdb-action@v1.0.8
+        uses: opt-nc/setup-duckdb-action@master
 
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@master
         with:
           python-version: "3.13"
 
@@ -44,7 +44,7 @@ jobs:
           dbt deps
       
       - name: Download Prior Dbt Artifacts
-        uses: actions/github-script@v6
+        uses: actions/github-script@master
         continue-on-error: true
         env:
           WORKFLOW_FILENAME: pr_to_main.yml
@@ -72,12 +72,12 @@ jobs:
         run: dbt docs generate
 
       - name: Upload Dbt Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@master
         with:
           name: dbt-target
           path: target
 
       - name: Download Dbt Artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@master
         with:
           name: dbt-target
