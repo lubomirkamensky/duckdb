@@ -60,8 +60,13 @@ jobs:
         run: dbt source freshness
 
       - name: Run dbt build
-        run: dbt build
+        id: run_dbt_build
+        run: dbt build --select state:modified+ result:error+ source_status:fresher+ --defer --state prior
         continue-on-error: true
+
+      - name: Full dbt build 
+        if: steps.run_dbt_build.outcome != 'success'
+        run: dbt build
 
       - name: Run docs generate
         run: dbt docs generate
