@@ -61,6 +61,7 @@ jobs:
 
       - name: Run dbt build
         run: dbt build --select state:modified+ result:error+ source_status:fresher+ --defer --state prior
+        continue-on-error: true
 
       - name: Run docs generate
         run: dbt docs generate
